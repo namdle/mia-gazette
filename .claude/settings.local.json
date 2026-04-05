@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:chargeraccount.org)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest:*)"
+    ]
+  }
+}
