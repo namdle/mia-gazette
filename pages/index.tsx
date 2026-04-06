@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { getAllArticles, getFeaturedArticle } from '@/lib/articles';
 import type { ArticleWithSlug } from '@/lib/types';
 import Masthead from '@/components/layout/Masthead';
@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ featured, rest, buildDate }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = () => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const all = getAllArticles();
   const featured = getFeaturedArticle(all) ?? null;
   const rest = featured ? all.filter((a) => a.slug !== featured.slug) : [];
