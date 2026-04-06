@@ -3,8 +3,12 @@
 # Usage: ./deploy.sh
 set -e
 
-NAS_HOST=lenas.local
-NAS_DEPLOY_PATH=/mnt/user/appdata/mia-gazette
+if [ ! -f .deploy-config ]; then
+  echo "Error: .deploy-config not found. Copy .deploy-config.example and fill in your values."
+  exit 1
+fi
+
+source .deploy-config
 
 echo "Pushing to GitHub..."
 git push

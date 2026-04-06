@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# deploy config (contains server details)
+.deploy-config
+
 # vercel
 .vercel
 
