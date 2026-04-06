@@ -8,7 +8,7 @@ import PageWrapper from '@/components/layout/PageWrapper';
 import FrontPageGrid from '@/components/front-page/FrontPageGrid';
 
 interface HomeProps {
-  featured: ArticleWithSlug;
+  featured: ArticleWithSlug | null;
   rest: ArticleWithSlug[];
   buildDate: string;
 }
@@ -30,7 +30,13 @@ const Home: NextPage<HomeProps> = ({ featured, rest, buildDate }) => {
 
       <main>
         <PageWrapper>
-          <FrontPageGrid featured={featured} rest={rest} />
+          {featured ? (
+            <FrontPageGrid featured={featured} rest={rest} />
+          ) : (
+            <p style={{ padding: '3rem 0', fontFamily: 'var(--font-meta)', color: 'var(--color-ink-muted)' }}>
+              No articles yet.
+            </p>
+          )}
         </PageWrapper>
       </main>
 
@@ -41,8 +47,8 @@ const Home: NextPage<HomeProps> = ({ featured, rest, buildDate }) => {
 
 export const getStaticProps: GetStaticProps<HomeProps> = () => {
   const all = getAllArticles();
-  const featured = getFeaturedArticle(all);
-  const rest = all.filter((a) => a.slug !== featured.slug);
+  const featured = getFeaturedArticle(all) ?? null;
+  const rest = featured ? all.filter((a) => a.slug !== featured.slug) : [];
 
   return {
     props: {
