@@ -1,0 +1,74 @@
+.header {
+  max-width: 740px;
+  margin: 0 auto 2rem;
+  padding-top: 2rem;
+}
+
+.tagRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  font-family: var(--font-meta);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--color-tag);
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  color: var(--color-ink);
+}
+
+.deck {
+  font-family: var(--font-deck);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  margin-bottom: 1rem;
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-meta);
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.author {
+  font-weight: 600;
+}
+
+.bylineDot {
+  color: var(--color-rule-light);
+}
+
+.rule {
+  height: 2px;
+  background: var(--color-rule);
+  margin-bottom: 1.5rem;
+}
+
+.coverFigure {
+  margin: 0 0 1.5rem;
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

@@ -3,7 +3,14 @@
     "allow": [
       "WebFetch(domain:chargeraccount.org)",
       "WebSearch",
-      "Bash(npx create-next-app@latest:*)"
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(mkdir -p /home/nam/projects/mia-homepage/scripts/scraper)",
+      "Bash(npm init:*)",
+      "Bash(npx playwright:*)",
+      "Bash(npx tsx:*)"
     ]
   }
 }

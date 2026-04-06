@@ -1,0 +1,16 @@
+services:
+  mia-gazette:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mia-gazette
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    volumes:
+      # Mount article content and images so they survive container rebuilds.
+      # After adding new .md files, trigger a rebuild to regenerate static pages.
+      - ./content/articles:/app/content/articles:ro
+      - ./public/images:/app/public/images:ro
+    environment:
+      - NODE_ENV=production

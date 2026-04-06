@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.env*
+*.env
+scripts/scraper/node_modules
+README.md
+AGENTS.md

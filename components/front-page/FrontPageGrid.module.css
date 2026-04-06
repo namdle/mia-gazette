@@ -1,0 +1,68 @@
+/* ── Desktop broadsheet grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-top: 3px solid var(--color-rule);
+}
+
+/* Featured story: left 2-column-wide cell */
+.featuredCell {
+  grid-column: 1 / 2;
+  border-right: 1px solid var(--color-rule-light);
+}
+
+/* Secondary stories: right column, stacked */
+.secondaryCell {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontalRule {
+  height: 1px;
+  background: var(--color-rule-light);
+  margin: 0 var(--column-gap);
+}
+
+/* Full-width divider between row 1 and row 2 */
+.rowDivider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--color-rule);
+}
+
+/* Bottom row: 3 equal columns */
+.bottomCell {
+  border-right: 1px solid var(--color-rule-light);
+}
+
+.bottomCell:last-child {
+  border-right: none;
+}
+
+/* ── Tablet (medium screens) ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Mobile: single column ── */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featuredCell,
+  .secondaryCell,
+  .bottomCell {
+    border-right: none;
+    border-bottom: 1px solid var(--color-rule-light);
+  }
+
+  .rowDivider {
+    display: none;
+  }
+}

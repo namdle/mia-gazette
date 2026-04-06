@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# article content and images — transferred separately to server
+/content/articles/*.md
+/public/images/*
+!/public/images/.gitkeep
+
+# scraper input/output
+/scripts/scraper/html-input/*.html
+/scripts/scraper/node_modules
